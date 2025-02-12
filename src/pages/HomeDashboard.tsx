@@ -1,7 +1,4 @@
-import { useEffect, useState } from "react";
-
 import { Card } from "../components/ui/Card";
-import { CreateContentModal } from "../components/ui/CreateContentModal";
 import { useContent } from "../hooks/useContent";
 import axios from "axios";
 import { BACKEND_URL } from "../config";

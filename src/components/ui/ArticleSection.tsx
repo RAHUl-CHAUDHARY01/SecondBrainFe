@@ -1,18 +1,21 @@
 import { ArrowRightSquare } from "lucide-react";
 import { useContent } from "../../hooks/useContent";
-import { useNavigate } from "react-router-dom";
+
+type Article = {
+  type: string;
+  title: string;
+  link: string;
+};
 
 export function ArticleSection() {
-  const { contents } = useContent(); // Fetch content
-  const navigate = useNavigate();
+  const { contents } = useContent() as { contents: Article[] }; // Type assertion
 
-  // Ensure contents is always an array
-  const articles = Array.isArray(contents) ? contents.filter((item) => item?.type === "article") : [];
+  const articles = Array.isArray(contents)
+    ? contents.filter((item: Article) => item.type === "article")
+    : [];
 
   return (
     <div className="p-6 mt-10">
-      
-
       {articles.length > 0 ? (
         <ul className="space-y-4">
           {articles.map((article, index) => (
@@ -23,7 +26,7 @@ export function ArticleSection() {
               <h3 className="font-semibold text-lg">{article.title}</h3>
               <ArrowRightSquare
                 className="w-6 h-6 text-gray-600 hover:text-[#5046e4] transition-transform duration-200 hover:scale-110"
-                onClick={() => window.open(article.link, "_blank")} // Opens link in a new tab
+                onClick={() => window.open(article.link, "_blank")}
               />
             </li>
           ))}
