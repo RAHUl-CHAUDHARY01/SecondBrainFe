@@ -3,7 +3,7 @@ import { Input } from "../components/ui/Input";
 import { Button } from "../components/ui/Button";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Eye, EyeOff } from "lucide-react"; 
 
 function Signup() {
@@ -82,7 +82,7 @@ function Signup() {
 
                 {/* Sign In Link */}
                 <p className="text-sm text-gray-500 text-center mt-3">
-                    Already have an account? <a href="/signin" className="text-blue-500 hover:underline">Sign In</a>
+                    Already have an account? <Link to="/signin" className="text-blue-500 hover:underline">Sign In</Link>
                 </p>
             </div>
         </div>

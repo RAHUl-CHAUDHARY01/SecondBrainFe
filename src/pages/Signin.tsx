@@ -4,7 +4,8 @@ import { Button } from "../components/ui/Button";
 import axios from "axios";
 import { BACKEND_URL } from "../config";
 import { useNavigate } from "react-router-dom";
-import { Eye, EyeOff } from "lucide-react"; 
+import { Eye, EyeOff } from "lucide-react";
+import {Link}from "react-router" 
 
 function Signin() {
     const usernameRef = useRef<HTMLInputElement | null>(null);
@@ -83,11 +84,11 @@ function Signin() {
                         onClick={signin} 
                         loading={loading} 
                     />
-                </div>
+                </div> 
 
                 {/* Sign Up Link */}
                 <p className="text-sm text-gray-500 text-center mt-3">
-                    Don't have an account? <a href="/signup" className="text-blue-500 hover:underline">Sign Up</a>
+                    Don't have an account? <Link to="/signup" className="text-blue-500 hover:underline">Sign Up</Link>
                 </p>
             </div>
         </div>
