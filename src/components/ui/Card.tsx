@@ -32,7 +32,18 @@ export function Card({title,link,type , contentId,onDelete}:CardProps){
                 </div>
             </div>
                     <div className="mt-4">
-                        {type==="youtube" &&  <iframe className="w-full rounded-md" src={link.replace('watch','embed').replace("?v=","/")} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe> }
+                    {type === "youtube" && (
+  <iframe
+    className="w-full rounded-md"
+    src={`https://www.youtube.com/embed/${link.includes("youtu.be/") ? link.split("youtu.be/")[1].split("?")[0] : link.split("v=")[1]?.split("&")[0]}`}
+    title="YouTube video player"
+    frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerPolicy="strict-origin-when-cross-origin"
+    allowFullScreen
+  ></iframe>
+)}
+
 
                         <div className="max-w-md mx-auto">
   <blockquote className="twitter-tweet">
