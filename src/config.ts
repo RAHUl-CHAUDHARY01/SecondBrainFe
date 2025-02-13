@@ -1,1 +1,1 @@
-export const BACKEND_URL = "https://second-brain-hb9d.onrender.com"
+export const BACKEND_URL = "https://secondbrain-4dwq.onrender.com"
