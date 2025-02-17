@@ -40,7 +40,7 @@ export function useContent() {
 
         let interval= setInterval(()=>{
             refresh();
-        },10*1000);
+        },1000);
 
 
         return ()=>{
